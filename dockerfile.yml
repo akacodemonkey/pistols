@@ -1,0 +1,4 @@
+FROM iress-docker.artifactory-uk.devel.iress.com.au/httpd
+
+COPY ./content/ /usr/local/apache2/htdocs/
+
