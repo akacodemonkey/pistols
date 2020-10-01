@@ -18,7 +18,7 @@ jobs:
       uses: docker/build-push-action@v1
       with:
         context: .
-        file: pistols-dockerfile.yml
+        dockerfile: pistols-dockerfile.yml
         push: true
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
       uses: docker/build-push-action@v1
       with:
         context: .
-        file: purple-dockerfile.yml
+        dockerfile: purple-dockerfile.yml
         push: true
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
