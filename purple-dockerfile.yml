@@ -1,0 +1,4 @@
+FROM httpd
+
+COPY ./purple/ /usr/local/apache2/htdocs/
+
