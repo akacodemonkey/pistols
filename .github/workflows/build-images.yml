@@ -14,21 +14,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the pistols image
-      run: docker build . --file pistols-dockerfile.yml --tag pistols:1.0
-    - name: Push to dockerhub
+    - name: Build-Push to dockerhub
       uses: docker/build-push-action@v1
       with:
+        context: .
+        file: pistols-dockerfile.yml
+        push: true
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
         repository: u/akacodemonkey/pistols:1.0
-        tag_with_ref: false
-    - name: Build purple image
-      run: docker build . --file purple-dockerfile.yml --tag purple:1.0
-    - name: Push to dockerhub
+        tag_with_ref: true
+    - name: Build-Push to dockerhub
       uses: docker/build-push-action@v1
       with:
+      with:
+        context: .
+        file: purple-dockerfile.yml
+        push: true
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-        repository: u/akacodemonkey/purple:1.0
-        tag_with_ref: false
+        repository: u/akacodemonkey/pistols:1.0
+        tag_with_ref: true
