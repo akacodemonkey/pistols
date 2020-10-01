@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build-Push to dockerhub
+    - name: Build-Push Pistols to dockerhub
       uses: docker/build-push-action@v1
       with:
         context: .
@@ -24,7 +24,7 @@ jobs:
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
         repository: u/akacodemonkey/pistols:1.0
         tag_with_ref: true
-    - name: Build-Push to dockerhub
+    - name: Build-Push Purple to dockerhub
       uses: docker/build-push-action@v1
       with:
       with:
