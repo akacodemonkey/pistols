@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the pistols image
-      run: docker build . --file pistols-dockerfile.yml --tag pistols:1:0
+      run: docker build . --file pistols-dockerfile.yml --tag pistols:1.0
     - name: Build purple image
-      run: docker build . --file purple-dockerfile.yml --tag purple:1:0
+      run: docker build . --file purple-dockerfile.yml --tag purple:1.0
