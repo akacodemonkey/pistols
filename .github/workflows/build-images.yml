@@ -22,7 +22,7 @@ jobs:
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
         repository: u/akacodemonkey/pistols:1.0
-        tag_with_ref: true
+        tag_with_ref: false
     - name: Build purple image
       run: docker build . --file purple-dockerfile.yml --tag purple:1.0
     - name: Push to dockerhub
@@ -31,4 +31,4 @@ jobs:
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
         repository: u/akacodemonkey/purple:1.0
-        tag_with_ref: true
+        tag_with_ref: false
