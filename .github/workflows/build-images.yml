@@ -27,7 +27,6 @@ jobs:
     - name: Build-Push Purple to dockerhub
       uses: docker/build-push-action@v1
       with:
-      with:
         context: .
         file: purple-dockerfile.yml
         push: true
